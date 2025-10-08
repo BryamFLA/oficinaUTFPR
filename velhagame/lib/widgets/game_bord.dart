@@ -10,21 +10,30 @@ class GameBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-      ),
-      itemCount: 9,
-      itemBuilder: (context, index) {
-        final row = index ~/ 3;
-        final col = index % 3;
-        return GameCell(
-          symbol: board[row][col],
-          onTap: () => onCellTap(row, col),
-        );
-      },
+    return Column(
+      children: [
+        Row(
+          children: [
+            GameCell(symbol: board[0][0], onTap: () => onCellTap(0, 0)),
+            GameCell(symbol: board[0][1], onTap: () => onCellTap(0, 1)),
+            GameCell(symbol: board[0][2], onTap: () => onCellTap(0, 2)),
+          ],
+        ),
+        Row(
+          children: [
+            GameCell(symbol: board[1][0], onTap: () => onCellTap(1, 0)),
+            GameCell(symbol: board[1][1], onTap: () => onCellTap(1, 1)),
+            GameCell(symbol: board[1][2], onTap: () => onCellTap(1, 2)),
+          ],
+        ),
+        Row(
+          children: [
+            GameCell(symbol: board[2][0], onTap: () => onCellTap(2, 0)),
+            GameCell(symbol: board[2][1], onTap: () => onCellTap(2, 1)),
+            GameCell(symbol: board[2][2], onTap: () => onCellTap(2, 2)),
+          ],
+        ),
+      ],
     );
   }
 }

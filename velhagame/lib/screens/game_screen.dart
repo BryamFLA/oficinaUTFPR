@@ -33,6 +33,7 @@ class _GameScreenState extends State<GameScreen> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             GameStatus(
               isGameOver: _game.isGameOver,

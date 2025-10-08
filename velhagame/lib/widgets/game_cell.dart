@@ -10,17 +10,16 @@ class GameCell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTap, 
       child: Container(
         width: 50,
         height: 50,
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey, width: 2),
-        ),
+        margin: EdgeInsets.all(10),
+        color: Colors.red,
         child: Center(
           child: Text(
             symbol,
-            style: const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
           ),
         ),
       ),

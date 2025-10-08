@@ -9,7 +9,11 @@ class TicTacToeGame {
   }
 
   void resetGame() {
-    board = List.generate(3, (_) => List.generate(3, (_) => ''));
+    board = [
+      ['', '', ''],
+      ['', '', ''],
+      ['', '', ''],
+    ];
     currentPlayer = 'X';
     isGameOver = false;
     winner = '';
@@ -64,8 +68,13 @@ class TicTacToeGame {
     }
 
     // Verificar empate (Deu Velha)
-    if (!board.any((row) => row.any((cell) => cell.isEmpty))) {
-      _endGame(''); // Vencedor vazio significa empate
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        if (board[i][j].isEmpty) {
+          return;
+        }
+      }
+      _endGame('');
     }
   }
 
