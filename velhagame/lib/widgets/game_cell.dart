@@ -12,8 +12,8 @@ class GameCell extends StatelessWidget {
     return GestureDetector(
       onTap: onTap, 
       child: Container(
-        width: 50,
-        height: 50,
+        width: 100,
+        height: 100,
         margin: EdgeInsets.all(10),
         color: Colors.red,
         child: Center(

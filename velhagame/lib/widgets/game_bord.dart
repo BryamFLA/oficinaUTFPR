@@ -13,6 +13,7 @@ class GameBoard extends StatelessWidget {
     return Column(
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GameCell(symbol: board[0][0], onTap: () => onCellTap(0, 0)),
             GameCell(symbol: board[0][1], onTap: () => onCellTap(0, 1)),
@@ -20,6 +21,7 @@ class GameBoard extends StatelessWidget {
           ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GameCell(symbol: board[1][0], onTap: () => onCellTap(1, 0)),
             GameCell(symbol: board[1][1], onTap: () => onCellTap(1, 1)),
@@ -27,6 +29,7 @@ class GameBoard extends StatelessWidget {
           ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GameCell(symbol: board[2][0], onTap: () => onCellTap(2, 0)),
             GameCell(symbol: board[2][1], onTap: () => onCellTap(2, 1)),

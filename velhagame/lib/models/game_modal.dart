@@ -2,6 +2,7 @@ class TicTacToeGame {
   late List<List<String>> board;
   late String currentPlayer;
   late bool isGameOver;
+  late bool isDraw;
   late String winner;
 
   TicTacToeGame() {
@@ -71,9 +72,14 @@ class TicTacToeGame {
     for (int i = 0; i < 3; i++) {
       for (int j = 0; j < 3; j++) {
         if (board[i][j].isEmpty) {
+          isDraw = false;
           return;
+        }else{
+          isDraw = true;
         }
       }
+    }
+    if(isDraw){
       _endGame('');
     }
   }
